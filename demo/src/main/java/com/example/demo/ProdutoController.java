@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.validation.Valid;
+
 @CrossOrigin(origins="*")
 @RestController
 public class ProdutoController {
@@ -30,7 +32,7 @@ public class ProdutoController {
     }
 
     @GetMapping("/produto/{id}")
-    public ResponseEntity<?> buscarProdutoPorId(
+    public ResponseEntity<ProdutoDTO> buscarProdutoPorId(
         @PathVariable int id
     ){
         ProdutoDTO resposta = service.buscarProdutoPorId(id);
@@ -40,19 +42,15 @@ public class ProdutoController {
 
     @PostMapping("/produto")
     public ResponseEntity<?> criarProduto(
-        @RequestBody ProdutoDTO dto
+        @RequestBody @Valid ProdutoDTO dto
     ){
-        if(dto == null) return ResponseEntity.status(400).build();
-
-        else{
-            ProdutoDTO salvo = service.criarProduto(dto);
-            return ResponseEntity.status(200).body(salvo);
-        }
+        ProdutoDTO salvo = service.criarProduto(dto);
+        return ResponseEntity.status(200).body(salvo);
     }
 
     @PutMapping("/produto/{id}")
     public ResponseEntity<?> atualizarProdutoById(
-        @RequestBody ProdutoDTO dto,
+        @RequestBody @Valid ProdutoDTO dto,
         @PathVariable int id
 
         ){

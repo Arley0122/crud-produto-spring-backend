@@ -6,9 +6,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.PositiveOrZero;
-import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name="produtos")
@@ -18,15 +15,12 @@ public class Produto {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     
-    @Size(min=3, max=100)
     @Column(nullable=false, unique=true )
     private String nome;
 
-    @Positive
     @Column(nullable=false)
     private double preco;
 
-    @PositiveOrZero
     @Column(nullable=false)
     private int estoque;
 

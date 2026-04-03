@@ -1,10 +1,20 @@
 package com.example.demo;
 
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.Size;
+
 public class ProdutoDTO {
     
     private int id;
+
+    @Size(min=3, max=100)
     private String nome;
+
+    @Positive(message = "o preço tem que obrigatoriamente ser maior que 0")
     private double preco;
+
+    @PositiveOrZero
     private int estoque;
 
     public int getId(){return this.id;}
