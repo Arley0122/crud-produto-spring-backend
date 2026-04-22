@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.produto;
 
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;

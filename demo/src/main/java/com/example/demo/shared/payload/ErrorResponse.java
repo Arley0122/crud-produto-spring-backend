@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.shared.payload;
 
 import java.time.Instant;
 import java.util.List;

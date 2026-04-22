@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.shared.exceções;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.example.demo.exceções.ProdutoNaoEncontradoException;
+import com.example.demo.shared.payload.ErrorResponse;
 
 @ControllerAdvice
 public class GlobalHandlerException {

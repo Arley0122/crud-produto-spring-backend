@@ -1,4 +1,4 @@
-package com.example.demo.exceções;
+package com.example.demo.shared.exceções;
 
 public class ProdutoNaoEncontradoException extends RuntimeException {
 

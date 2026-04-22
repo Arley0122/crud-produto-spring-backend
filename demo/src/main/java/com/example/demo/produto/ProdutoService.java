@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.produto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.exceções.ProdutoNaoEncontradoException;
+import com.example.demo.shared.exceções.ProdutoNaoEncontradoException;
 
 @Service
 public class ProdutoService {
